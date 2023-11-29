@@ -39,7 +39,7 @@
 
                 @auth
                 <li>
-                    <a href="/dashboard" class="nav-link">Tarefas</a>
+                    <a href="/view" class="nav-link">Tarefas</a>
 
                 </li>
                 <li>
@@ -81,7 +81,10 @@
     </main>
 
     <footer>
-        <p>Ray&Isa &copy;2023</p>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      ©2023 Ray&Isa
+      
+    </div>
     </footer>
 <script>
     hamburger=document.querySelector(".hamburger");
