@@ -17,7 +17,7 @@ use App\Http\Controllers\EventController;
 Route::get('/', [EventController::class,'index']); 
 Route::get('/events/create', [EventController::class,'create'])->middleware('auth'); 
 Route::get('/sumario/QuemSomos', [EventController::class,'sumario']); 
-Route::post('/events',[EventController::class,'store']);
+Route::post('/events',[EventController::class,'store'])->middleware('auth'); 
 Route::get('/view',[EventController::class,'view']);
 
 
@@ -30,6 +30,6 @@ Route::middleware([
     'verified'
 ])->get
     ('/dashboard', function () {
-        return view('dashboard');
+        return redirect('/');
     })->name('dashboard');
 

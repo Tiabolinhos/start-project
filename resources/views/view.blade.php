@@ -6,17 +6,19 @@
 
 <link rel="stylesheet" href="/css/style.css">
 
-<div id="search-container">
+<div id="search-container"  class="row">
   <h1>Procurar Tarefa</h1>
   <form action="">
     <input type="text" id="search" name="search" class="form-control" placeholder="procurar">
   </form>
 </div>
-<div id="events-container" class="col-md-12">
-  <div id="cards-container" class="row">
+<div id="events-container">
+  <div id="cards-container" class="row d-flex flex-row justify-content-around mb-3">
     @foreach($events as $event)
-    <div class="card col-md-3">
-      <img src="/img/events/{{$event->image}}" alt="{{$event->title}}">
+    <div class="card col-md-4">
+      <div class="card-img">
+        <img src="/img/events/{{$event->image}}" alt="{{$event->title}}">
+    </div>
       <div class="card-body">
 
         <h5 class="card-title">{{$event->title}}</h5>
@@ -24,8 +26,8 @@
         <a href="#" class="btn btn-primary">Saiba mais</a>
 
       </div>
-      @endforeach
-    </div>
+      </div>
+    @endforeach
   </div>
 </div>
 
