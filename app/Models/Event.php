@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,8 +17,15 @@ class Event extends Model
     protected $dates =['date'];
 
     public function user(){
-        return $this->belongsTo('App/Models/User');
+        return $this->belongsTo('User::class');
 
+    }
+
+    public function scopeByUser(Builder $query, int $id)
+    {
+        return $query-> whereHas('user',function($user) use ($id){
+            $user->where('id', $id);
+        });
     }
 
     

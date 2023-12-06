@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Event;
 
+
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 
@@ -34,7 +36,7 @@ class EventController extends Controller
         return view('events.create');
     }
 
-    
+
 
 
 
@@ -67,6 +69,17 @@ class EventController extends Controller
 
         return redirect('/')->with('msg', 'Tarefa  criada com sucesso');
 
+    }
+
+    public function show($id){
+        $this->middleware('auth');
+        $event=Event::byUser(Auth::id())->get();
+        $user=User::all();
+        $lineas = lineas::all();
+        $event= Event::findOrFail($id);
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
+
+        return view('events.show',['event' =>$event,'eventOwner'=> $eventOwner]);
     }
 
    

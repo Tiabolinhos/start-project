@@ -39,8 +39,9 @@
 
                 @auth
                 <li>
-                    <a href="/view" class="nav-link">Tarefas</a>
-
+                    
+                        <a href="/view" class="nav-link">Tarefas</a>
+                    
                 </li>
                 <li>
                     <form action="/logout" method="POST">
@@ -53,10 +54,15 @@
                 </li>
                 @endauth
                 <li>
+               
                     <a href="/events/create" class="nav-link">Criar Tarefa</a>
+                   
                 </li>
                 <li>
+               
                     <a href="/sumario/QuemSomos" class="nav-link">Sobre</a>
+                  
+
                 </li>
 
             </ul>

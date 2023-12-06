@@ -10,6 +10,7 @@
     <form action="/events" method="POST" enctype="multipart/form-data">
         @csrf
         
+        
         <div class="form-group">
             <label for="title">Tarefa:</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Nome da Tarefa">
